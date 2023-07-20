@@ -133,6 +133,19 @@ button:disabled {
     cursor: pointer;
 }
 
+/* Hide default video player controls */
+video::-webkit-media-controls {
+    display: none;
+}
+
+video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+
+video::-webkit-media-controls-panel {
+    display: none !important;
+}
+
 /* Questions */
 #question-container {
     display: flex;
