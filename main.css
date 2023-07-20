@@ -1,0 +1,250 @@
+/* Basics */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(27, 27, 27);
+    margin: 0;
+}
+
+:root {
+    --bg-color: #fff;
+    --primary-color: #007bff;
+    --primary-color-dark: #0056b3;
+    --white-color: #fff;
+    --text-color: #333;
+}
+
+body {
+    direction: rtl;
+    background-color: var(--bg-color)
+}
+
+/* Page style*/
+.container {
+    max-width: 800px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: var(--white-color)
+}
+
+header {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-family: 'Rubik Glitch', Arial, Helvetica, sans-serif;
+}
+
+header img {
+    object-fit: contain;
+    width: 6em;
+}
+
+#video-container {
+    display: flex;
+    max-width: 1200px;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+#video-player {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#time-display {
+    direction: ltr;
+    text-align: center;
+    position: relative;
+    bottom: 1.2em;
+}
+
+
+#controls {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.setup-controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#operation-controls {
+    margin-top: 4em;
+}
+
+/* Buttons styles */
+button {
+    margin: 0 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 5px;
+    transition: all .4s ease-in-out;
+}
+
+button:hover {
+    background-color: var(--primary-color-dark);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.fa-refresh {
+    font-size: 24px !important;
+    color: var(--primary-color);
+}
+
+.fa-refresh:hover {
+    cursor: pointer;
+    color: var(--primary-color-dark);
+}
+
+.volume-input-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.volume-input-container label {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.volume-input-container input:hover {
+    cursor: pointer;
+}
+
+/* Questions */
+#question-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid var(--primary-color-dark);
+    padding: 10px;
+    border-radius: 20px;
+    width: fit-content;
+    margin: 0 auto;
+    gap: 1em;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    margin-top: 1.5em;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+#question-container span {
+    position: relative;
+    align-self: flex-start;
+    bottom: 37px;
+    color: var(--primary-color);
+}
+
+#answers {
+    display: flex;
+}
+
+#question-container button {
+    color: var(--text-color);
+    background-color: transparent;
+}
+
+#question-container button:hover {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+
+/* end video section */
+#end-section {
+    flex-direction: column;
+}
+
+.typing-animation {
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 1.5em;
+    margin: 0.5em;
+    animation: typing 4s steps(40, end) forwards, cursor 0.5s steps(40) infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+#restart-btn {
+    opacity: 0;
+    animation: fade-in 2s forwards;
+    animation-delay: 4s;
+}
+
+@keyframes fade-in {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Message styles */
+#message {
+    position: absolute;
+    background-color: var(--white-color);
+    margin: 0 auto;
+    margin-right: 10px;
+    z-index: 10;
+    bottom: 10px;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: none;
+}
+
+/* Responsive styles for mobile devices */
+@media screen and (max-width: 868px) {
+
+    #video-container {
+        padding-bottom: 75%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #question-container {
+        padding: 5px;
+        border-radius: 20px;
+        max-width: 100%;
+        gap: .5em;
+        font-size: 1em;
+    }
+}
+
+/* Add media query to apply styles on screens larger than 800px */
+@media (min-width: 801px) {
+    .container {
+        padding: 0;
+        margin: 0 auto;
+    }
+}

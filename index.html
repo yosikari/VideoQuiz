@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>AiJunk</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Head -->
+        <header>
+            <h1>חידון ידע כללי</h1>
+            <img src="media/logo.png" alt="logo">
+        </header>
+
+        <main>
+            <!-- Video player -->
+            <div id="video-container">
+                <video id="video-player">
+                    <source src="media/video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <!-- Video timer -->
+            <div id="time-display">0:00 / 1:11.2</div>
+
+            <div id="controls">
+                <!-- Paly / Pause buttons -->
+                <div id="operation-controls">
+                    <button id="play-btn" title="Play">הפעל</button>
+                    <button id="pause-btn" disabled title="Pause">עצור</button>
+                </div>
+                <!-- Question container -->
+                <div id="question-container" style="display: none;">
+                    <span>שאלה 📌</span>
+                    <div id="question"></div>
+                    <div id="answers">
+                        <button class="answer-btn"></button>
+                        <button class="answer-btn"></button>
+                        <button class="answer-btn"></button>
+                        <button class="answer-btn"></button>
+                    </div>
+                </div>
+                <!-- End video playback message -->
+                <div id="end-section" style="display: none;">
+                    <p class="typing-animation">כל הכבוד סיימת את החידון 🥳</p>
+                    <button id="restart-btn">שחק שוב</button>
+                </div>
+                <!-- Setup controls for sound and restart -->
+                <div class="setup-controls">
+                    <div class="volume-input-container">
+                        <label>עוצמת שמע</label>
+                        <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5" title="Volume">
+                    </div>
+                    <i class="fa fa-refresh" title="Restart"></i>
+                </div>
+            </div>
+        </main>
+        <!-- Flash message -->
+        <div id="message"></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
